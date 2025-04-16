@@ -1,5 +1,16 @@
 function minDate(dates) {
   //write you code here
+	if (!dates || dates.length === 0) {
+    return undefined; // Or throw an error: throw new Error("Input array cannot be empty.");
+  }
+
+  let min = dates[0]; // Initialize with the first date
+  for (let i = 1; i < dates.length; i++) {
+    if (dates[i] < min) { // String comparison works correctly for YYYY/MM/DD
+      min = dates[i];
+    }
+  }
+  return min;
 }
 
 // Do not change the code
